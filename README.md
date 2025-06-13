@@ -1,38 +1,61 @@
-# pyMonitor
+# 🖥️ pyMonitor – systemowy monitor zasobów
 
-Po pobraniu projektu wykonaj:
+**pyMonitor** to lekka aplikacja napisana w Pythonie, która umożliwia monitorowanie podstawowych zasobów systemu operacyjnego takich jak CPU, RAM, dysk, GPU, sieć oraz czas działania systemu. Dane prezentowane są zarówno w interfejsie webowym, jak i udostępniane przez REST API.
 
-Na windows:
+---
 
+##  Instalacja
+Po pobraniu programu należy włączyć konsole poleceń i wykonać nastepujące komendy:
+
+###  Dla Windows:
+```bash
 python -m venv .venv
-.\.venv\Scripts\activate
-
+.venv\Scripts\activate
 pip install psutil py-cpuinfo flask gputil
+```
 
-Linux:
+###  Dla Linux:
+```bash
 python3 -m venv .venv
 source .venv/bin/activate
-
 pip install psutil py-cpuinfo flask gputil
+```
 
+---
 
-Wszystkie statystyki razem:
-http://127.0.0.1:5000/api/stats
+##  Uruchomienie
+Po zainstalowaniu wymaganych bibliotek uruchom program poleceniem:
 
-CPU:
-http://127.0.0.1:5000/api/cpu
+```bash
+python main.py
+```
 
-RAM:
-http://127.0.0.1:5000/api/ram
+Aplikacja będzie dostępna pod adresem:
+```
+http://127.0.0.1:5000/
+```
 
-Dysk:
-http://127.0.0.1:5000/api/disk
+---
 
-System:
-http://127.0.0.1:5000/api/system
+##  Endpointy API
 
-Sieć:
-http://127.0.0.1:5000/api/network
+| Endpoint | Opis |
+|---------|------|
+| `/api/stats` | Wszystkie statystyki razem |
+| `/api/stats/cpu` | Statystyki CPU |
+| `/api/stats/ram` | Statystyki pamięci RAM |
+| `/api/stats/disk` | Statystyki dysku |
+| `/api/stats/gpu` | Statystyki GPU |
+| `/api/stats/system` | Informacje o systemie |
+| `/api/stats/network` | Statystyki sieciowe |
 
-GPU:
-http://127.0.0.1:5000/api/gpu
+---
+
+##  Interfejs webowy
+
+Po wejściu na stronę główną (`/`) aplikacja wyświetli dane systemowe w czytelnej formie, które automatycznie odświeżają się co kilka sekund.
+
+---
+
+##  Autorzy
+Projekt realizowany w ramach przedmiotu **Architektura Systemów Komputerowych** na 2. semestrze studiów informatycznych.
